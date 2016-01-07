@@ -6,7 +6,7 @@
 </body>
 <script>
 	var worker = new Worker('service-worker.js');
-
+	console.log(worker);
 	worker.addEventListener('message', function(e) {
 	  console.log('Worker said: ', e.data);
 	}, false);
