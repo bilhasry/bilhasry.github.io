@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<head></head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	
 </body>
+<script>
+	var worker = new Worker('service-worker.js');
+
+	worker.addEventListener('message', function(e) {
+	  console.log('Worker said: ', e.data);
+	}, false);
+
+	worker.postMessage('Hello World'); // Send data to our worker.
+</script>
 </html>
