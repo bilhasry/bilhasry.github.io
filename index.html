@@ -8,12 +8,14 @@
 window.onload = {function(){
 
 	var worker = new Worker('service-worker.js');
+	
+	worker.postMessage('Hello World'); // Send data to our worker.
 
 	worker.addEventListener('message', function(e) {
 	  console.log('Worker said: ', e.data);
 	}, false);
 
-	worker.postMessage('Hello World'); // Send data to our worker.
+	
 }}
 	
 </script>
